@@ -18,6 +18,9 @@ class BearsViewModel(private val repository: BearRepository) : ViewModel() {
     fun setBear(bearModel: BearModel) {
         bearModelLiveData.value = bearModel
     }
+    fun setBearModel(bearModel: BearModel) {
+        bearModelLiveData.value = bearModel
+    }
 
     fun getBear(): LiveData<BearModel> {
         return bearModelLiveData

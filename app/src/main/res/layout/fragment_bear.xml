@@ -1,19 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="viewmodel"
             type="com.rgonzalez.bearapp.ui.detail.BearViewModel" />
     </data>
-    <FrameLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.detail.BearFragment">
 
+        <TextView
+            android:id="@+id/title_detail"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:gravity="center_horizontal|top"
+            android:text="Detalle"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/title_name_text_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:gravity="center_horizontal|top"
+            android:text="Name:"
+            app:layout_constraintTop_toBottomOf="@id/title_detail" />
 
-    </FrameLayout>
+        <TextView
+            android:id="@+id/name_text_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:gravity="center_horizontal|top"
+            android:text="@{viewmodel.name}"
+            app:layout_constraintTop_toBottomOf="@id/title_name_text_detail" />
+
+        <TextView
+            android:id="@+id/title_color_text_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:gravity="center_horizontal|top"
+            android:text="Color"
+            app:layout_constraintTop_toBottomOf="@id/name_text_detail" />
+
+        <TextView
+            android:id="@+id/color_text_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:gravity="center_horizontal|top"
+            android:text="@{viewmodel.color}"
+            app:layout_constraintTop_toBottomOf="@id/title_color_text_detail" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,5 +1,6 @@
 package com.rgonzalez.bearapp.ui.detail
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -18,6 +19,16 @@ class BearViewModel(private val repository: BearRepository): ViewModel() {
     var color = MutableLiveData("")
     var height = MutableLiveData("")
 
+    fun setBear(bearModel: BearModel ) {
+        name.value = bearModel.name
+        age.value = bearModel.age.toString()
+        color.value = bearModel.color
+        height.value = bearModel.height.toString()
+    }
+
+    fun getBear(): LiveData<BearModel> {
+        return bearModelLiveData
+    }
 
     companion object {
         val Factory = viewModelFactory {

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bearsFragment">
+
+    <fragment
+        android:id="@+id/bearsFragment"
+        android:name="com.rgonzalez.bearapp.ui.list.BearsFragment"
+        android:label="BearsFragment" >
+        <action
+            android:id="@+id/action_bearsFragment_to_newBearFragment"
+            app:destination="@id/newBearFragment" />
+        <action
+            android:id="@+id/action_bearsFragment_to_bearFragment"
+            app:destination="@id/bearFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bearFragment"
+        android:name="com.rgonzalez.bearapp.ui.detail.BearFragment"
+        android:label="BearFragment" />
+    <fragment
+        android:id="@+id/newBearFragment"
+        android:name="com.rgonzalez.bearapp.ui.form.NewBearFragment"
+        android:label="NewBearFragment" />
+</navigation>
