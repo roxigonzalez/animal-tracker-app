@@ -1,4 +1,4 @@
-package com.rgonzalez.bearapp.data.repositories
+package com.rgonzalez.bearapp.repositories
 
 import com.rgonzalez.bearapp.data.model.BearModel
 
