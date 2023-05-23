@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Bear App</string>
+    <string name="choose_color">Choose color</string>
+    <string name="age">Age</string>
+    <string name="button">Save</string>
+    <string name="name">Name</string>
+    <string name="new_bear">New Bear</string>
+    <string name="height">Height</string>
 </resources>

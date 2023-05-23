@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.rgonzalez.bearapp.R
 import com.rgonzalez.bearapp.data.model.BearModel
 import com.rgonzalez.bearapp.databinding.FragmentBearsBinding
@@ -22,7 +23,7 @@ class BearsFragment : Fragment() {
 
     private lateinit var binding: FragmentBearsBinding
     private lateinit var recyclerViewAdapter: BearRecyclerViewAdapter
-
+    private lateinit var buttonAdd: FloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,7 +46,16 @@ class BearsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setRecyclerView(view)
+        goNewForm(view)
 
+    }
+
+    fun goNewForm(view: View) {
+        buttonAdd = view.findViewById(R.id.add_bear_button)
+
+        buttonAdd.setOnClickListener{
+            findNavController().navigate(R.id.action_bearsFragment_to_newBearFragment)
+        }
     }
 
     private fun setRecyclerView(view: View) {

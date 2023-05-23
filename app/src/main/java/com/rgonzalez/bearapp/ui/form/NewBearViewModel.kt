@@ -37,8 +37,8 @@ class NewBearViewModel(private val repository: BearRepository) : ViewModel() {
         }
         val bear = BearModel(
             name.value!!,
-            age.value!!,
-            color.value!!.toInt(),
+            color.value!!,
+            age.value!!.toInt(),
             height.value!!.toDouble(),
         )
         addBear(bear)
@@ -47,6 +47,9 @@ class NewBearViewModel(private val repository: BearRepository) : ViewModel() {
 
     }
 
+    fun clearStatus() {
+        status.value = INACTIVE
+    }
     fun clearData() {
         name.value = ""
         color.value = ""
